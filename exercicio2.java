@@ -1,51 +1,47 @@
  
-import java.util.Scanner;
 
- public class exercicio1{
-
-    public static Scanner input = new Scanner(System.in);
-
+public class exercicio2 {
+    
     public static void localizarMatriz(int[][] m){
 
         for(int i = 0; i < m.length; i++){
 
             for(int j = 0; j < m[i].length; j++){
 
-                System.out.println("Digite o número da  matriz: [" + i + "]" + "[" + j + "]" );
-                m[i][j] = input.nextInt();
+                if(i == j){
+
+                    m[i][j] = 1;
+                }
+
+                else{
+                    m[i][j] = 0;
+                }
+                
             }
             
         }
     }
 
-    public static void imprimirValoresmaioresque10(int[][] m){
-
-        int cont = 0;
+    public static void imprimirMatriz(int[][] m){
 
         for(int i = 0; i < m.length; i++){
 
             for(int j = 0; j < m[i].length; j++){
 
-                
-                if(m[i][j] > 10){
-                    cont++;
-                    
-                }
-
+               System.out.print(m[i][j] + " ");
             }
-            
+            System.out.println();
         }
-        System.out.println("Quantidade de valores maiores que 10: " + cont);
     }
 
     public static void main(String[] args) {
         
-        int[][] m = new int[4][4];
+        int[][] matriz = new int[5][5];
 
+        System.out.println(" Matriz Abaixo: ");
 
-        localizarMatriz(m);
-        imprimirValoresmaioresque10(m);
+        localizarMatriz(matriz);
+        imprimirMatriz(matriz);
 
     }
-
- }
+}
